@@ -9,7 +9,7 @@ result, I wrote this little module to help me load pg_service.conf contents
 and build a struct out of the contents. This should make it easy to then
 generate your own connection pg string and connect to the database.
 
-This package makes use of the Go [INI lib](https://gopkg.in/ini) (v1) to do all of the
+This package makes use of the Go [INI lib](https://gopkg.in/ini.v1) to do all of the
 heavy lifting, but does a small amount of additional checking before loading
 the pg_service.conf contents.
 
