@@ -1,4 +1,4 @@
-# golang-pgservices
+# pgservices
 
 A little Go module to parse and return details from a Postgres Services 
 (pg_service.conf) file.
@@ -15,7 +15,7 @@ the pg_service.conf contents.
 
 # Synopsis
 
-You should really only need to use the ParsePgService function to make
+You should really only need to use the ParsePgServices function to make
 use of this package.
 
 ```go
@@ -32,15 +32,15 @@ func main() {
 // Load pg services
     fileReader, err := os.Open("/etc/postgresql-common/pg_service.conf")
     if err != nil {
-        fmt.Printf("Error opening file %v", err)
+        fmt.Printf("Error opening file %v\n", err)
         os.Exit(1)
     }
 
     defer fileReader.Close()
 
-    pgServices, err := pgservices.ParsePgService(fileReader)
+    pgServices, err := pgservices.ParsePgServices(fileReader)
     if err != nil {
-        fmt.Printf("Crap! %v", err)
+        fmt.Printf("Crap! %v\n", err)
         os.Exit(1)
     }
 
